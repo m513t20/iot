@@ -17,9 +17,8 @@ void setup() {
   sei();
 }
 
-void my_digit_write() {
+void my_digit_write(int x) {
   val++;
-  int x = 100;
   bool first = val%x==0;
   bool second = val%(x*2)==0;
   bool third = val%(x*3)==0;
@@ -36,7 +35,7 @@ void my_digit_write() {
 }
 
 ISR(TIMER1_COMPA_vect) {
-  my_digit_write();
+  my_digit_write(100);
 }
 
 

@@ -19,7 +19,7 @@ void setup() {
 
 void my_digit_write() {
   val++;
-  int x = 2; 
+  int x = 100;
   bool first = val%x==0;
   bool second = val%(x*2)==0;
   bool third = val%(x*3)==0;

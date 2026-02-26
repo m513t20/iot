@@ -8,3 +8,6 @@ String SSID_CLI = "wifi_net";
 String SSID_PASSWORD = "pwd";
 
 int led = LED_BUILTIN;
+
+char* mqtt_broker = "broker.emqx.io";
+const int mqtt_port = 1883;

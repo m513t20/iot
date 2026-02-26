@@ -3,6 +3,7 @@
 #include <ESP8266WiFiMulti.h>
 
 ESP8266WiFiMulti wifiMulti;
+WiFiClient wifiClient;
 
 String id(){
     //TODO make it from MAC

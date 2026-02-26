@@ -10,7 +10,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
 
-  delay(500);
-  Serial.print("our id is: ");
-  Serial.println(id());
+  // delay(500);
+  // Serial.print("our id is: ");
+  // Serial.println(id());
 }

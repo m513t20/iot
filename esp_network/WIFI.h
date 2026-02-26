@@ -2,6 +2,8 @@
 #include <WiFiClient.h>
 #include <ESP8266WiFiMulti.h>
 
+ESP8266WiFiMulti wifiMulti;
+
 String id(){
     //TODO make it from MAC
     uint8_t mac[WL_MAC_ADDR_LENGTH];
@@ -21,14 +23,28 @@ void start_AP_mode(){
 }
 
 void start_client_mode(){
+    Serial.print("Attempt to set client to ssid: ");
+    Serial.print(SSID_CLI);
+    wifiMulti.addAP(SSID_CLI.c_str(), SSID_PASSWORD.c_str());
+    while(wifiMulti.run() != WL_CONNECTED){
+    }
+    Serial.println("Attempt to set client to Router");
 
 }
 
 void init_WIFI(bool mode){
     start_AP_mode();
     return;
-    if (mode == WIFI_START_MODE_CLIENT)
+    if (mode == WIFI_START_MODE_CLIENT){
         start_client_mode();
-    else
+        String ip = WiFi.localIP().toString();
+        Serial.print("my ip adress is: ");
+        Serial.println(ip);
+    }
+    else{
         start_AP_mode();
+        String ip = WiFi.localIP().toString();
+        Serial.print("my ip adress is: ");
+        Serial.println(ip);
+    }
 }

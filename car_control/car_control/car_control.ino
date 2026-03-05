@@ -33,7 +33,7 @@ void setup() {
   delay(2000);
   turn_left(100);
   delay(2000);
-  turn_right(100);
+  turn_turn_leftright(100);
   delay(2000);
   rotate_left(100);
   delay(2000);
